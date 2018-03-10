@@ -1,0 +1,10 @@
+/Users/suzannesalerno/Development/C#/fundamentals1/bin/Debug/netcoreapp2.0/fundamentals1.deps.json
+/Users/suzannesalerno/Development/C#/fundamentals1/bin/Debug/netcoreapp2.0/fundamentals1.runtimeconfig.json
+/Users/suzannesalerno/Development/C#/fundamentals1/bin/Debug/netcoreapp2.0/fundamentals1.runtimeconfig.dev.json
+/Users/suzannesalerno/Development/C#/fundamentals1/bin/Debug/netcoreapp2.0/fundamentals1.dll
+/Users/suzannesalerno/Development/C#/fundamentals1/bin/Debug/netcoreapp2.0/fundamentals1.pdb
+/Users/suzannesalerno/Development/C#/fundamentals1/obj/Debug/netcoreapp2.0/fundamentals1.csproj.CoreCompileInputs.cache
+/Users/suzannesalerno/Development/C#/fundamentals1/obj/Debug/netcoreapp2.0/fundamentals1.AssemblyInfoInputs.cache
+/Users/suzannesalerno/Development/C#/fundamentals1/obj/Debug/netcoreapp2.0/fundamentals1.AssemblyInfo.cs
+/Users/suzannesalerno/Development/C#/fundamentals1/obj/Debug/netcoreapp2.0/fundamentals1.dll
+/Users/suzannesalerno/Development/C#/fundamentals1/obj/Debug/netcoreapp2.0/fundamentals1.pdb

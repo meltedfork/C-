@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Time Display</title>
+    </head>
+    <body>
+        <h1>The current date and time is </h1>
+        @{
+            DateTime dt = DateTime.Now;
+        }   
+        <h2>@String.Format("{0:f}", dt)</h2>
+    </body>
+</html>

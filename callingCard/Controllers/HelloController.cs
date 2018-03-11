@@ -6,12 +6,12 @@ namespace YourNamespace.Controllers
     public class HelloController : Controller
     {
         // A GET method
-        [HttpGet]
-        [Route("index")]
-        public string Index()
-        {
-            return "Hello World!";
-        }
+        // [HttpGet]
+        // [Route("index")]
+        // public string Index()
+        // {
+        //     return "Hello World!";
+        // }
 
         [HttpGet]
         [Route("{firstName}/{lastName}/{age}/{favColor}")]

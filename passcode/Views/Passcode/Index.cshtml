@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Random Passcode Generator</title>
+        <link rel="stylesheet" href="~/css/style.css"/>
+    </head>
+    <body>
+        <div>
+            <p>Random Passcode (passcode # @ViewBag.count)</p>
+            <h3>@ViewBag.RandomCode</h3>
+            <form action="generate" method="post">
+                <button>Generate</button>
+            </form>
+        </div>
+    </body>
+</html>    

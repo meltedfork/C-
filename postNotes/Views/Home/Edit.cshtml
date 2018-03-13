@@ -1,0 +1,23 @@
+<h2>Note Editor</h2>
+
+<h4>Current Note: </h4>
+    @foreach(var notes in ViewBag.Notes)
+    {
+        <div>
+            <br>
+            <p>@notes["title"]</p>
+            <p>@notes["content"]</p>
+            <p>@notes["created_at"]</p>
+            <br>
+        </div>
+    
+        <form action='/update/@notes["id"]' method="post">
+            <label>Change Title: </label>
+            <input type="text" name="title" value='@notes["title"]'>
+            <label>Change Note: </label>
+            <textarea name="content">@notes["content"]</textarea>
+            <br>
+            <button>Update Now</button>
+            <br>
+        </form>
+    }

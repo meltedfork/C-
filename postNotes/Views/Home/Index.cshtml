@@ -1,0 +1,26 @@
+@{
+    ViewData["Title"] = "Notes";
+}
+<h2>Add Notes</h2>
+<form action="process" method="post">
+    <input type="text" name="title" value="Insert note title here..."></input><br>
+    <br>
+    <textarea name="content">Enter description here...</textarea><br>
+    <br>
+    <button type="submit">Add Note</button>
+</form>
+
+<h2>Read Notes</h2>
+    
+    @foreach(var note in ViewBag.Notes)
+    {
+        <div>
+            <br>
+            <p>@note["title"]</p>
+            <p>@note["content"]</p>
+            <p>@note["created_at"]</p>
+            <a href='edit/@note["id"]'>Edit</a>  |  <a href='delete/@note["id"]'>Delete</a>
+            <br>
+        </div>
+    }
+

@@ -1,0 +1,15 @@
+@{
+    ViewData["Title"] = "Error Page";
+}
+<h2>UH OH ERRORS!!!</h2>
+
+<h3>Please address the following errors:</h3>
+@{
+    foreach(var error in ViewBag.errors){
+        @if(error.Errors.Count > 0){
+            <h5>@error.Errors[0].ErrorMessage</h5>
+        }
+        
+    }
+}    
+<button><a href="/">Home</a></button>

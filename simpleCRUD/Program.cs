@@ -25,11 +25,12 @@ namespace simpleCRUD
             string favnum = Console.ReadLine();
             string query = $"INSERT into users (firstname, lastname, favnumber) VALUES('{first}', '{last}', '{favnum}')";
             DbConnector.Execute(query);
+            read();
         }
         
         static void Main(string[] args)
         {  
-            read();
+            create();
         }
     }
 }

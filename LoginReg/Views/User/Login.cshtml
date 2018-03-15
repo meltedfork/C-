@@ -1,0 +1,17 @@
+@{
+    ViewData["Title"] = "Login";
+}
+@model LoginReg.Models.Login
+
+<h1>Login</h1>
+<form asp-controller="User" asp-action="LoginUser" method="post">
+    <span asp-validation-for="Email"></span>
+    <label>Email Address</label>
+    <input asp-for="Email"/>
+    <br>
+    <span asp-validation-for="Password"></span>
+    <label>Password</label>
+    <input asp-for="Password"/>
+    <br>  
+    <button>Submit</button>
+</form>

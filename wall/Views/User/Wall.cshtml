@@ -1,0 +1,55 @@
+@{
+    ViewData["Title"] = "Community Posts";
+}
+
+
+<h3>Welcome, @ViewBag.Name</h3>
+<a href="logout">Log out</a>
+<br>
+<br>
+<p>Post a message:</p>
+<form action="create" method="post">
+    <textarea name="message"></textarea><br>
+    <button type="submit">Post</button>
+</form>
+<br>
+<br>
+<br>
+<h4>Community Messages</h4>
+
+<br>
+<div>
+    @{
+        @foreach(var message in @ViewBag.Messages)
+        {
+        <div>
+            <p>@message["firstname"] @message["lastname"] - @message["created_at"]</p>
+            <p>@message["message"]</p>
+        </div>
+        <br>
+        
+            @foreach(var comment in @ViewBag.Comments)
+            {
+                if(@comment["messages_id"] == @message["id"])
+                {
+                <div>
+                    <p>@comment["firstname"] </p>            
+                    <p>@comment["created_at"]</p>
+                    <p>@comment["comment"]</p>
+                </div>
+                }
+            }  
+           
+        <br>
+        <p>Post a comment:</p>
+        <form asp-controller="User" asp-action="CommentMaker" asp-route-messageid="@message["id"]" method="post">
+            <input type="hidden"  name="messageid">
+            <textarea name="comment"></textarea><br>
+            <button type="submit">Post</button>
+        </form>
+        <br>
+        <br>
+        }
+    
+    }   
+</div>

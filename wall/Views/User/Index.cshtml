@@ -1,0 +1,47 @@
+@{
+    ViewData["Title"] = "Login | Registration";
+}
+
+@model wall.Models.User 
+<h2>Welcome to the Wall</h2>
+<br>
+<h3>Enter Your Information to Register</h3>
+<form asp-controller="User" asp-action="Register" method="post">
+    <span asp-validation-for="register.firstname"></span>
+    <label>First Name</label>
+    <input asp-for="register.firstname"/>
+    <br>
+    <span asp-validation-for="register.lastname"></span>
+    <label>Last Name</label>
+    <input asp-for="register.lastname"/>
+    <br>
+    <span asp-validation-for="register.email"></span>
+    <label>Email Address</label>
+    <input asp-for="register.email"/>
+    <br>
+    <span asp-validation-for="register.password"></span>
+    <label>Password</label>
+    <input asp-for="register.password"/>
+    <br>
+    <span asp-validation-for="register.passwordConfirm"></span>
+    <label>Confirm Password</label>
+    <input asp-for="register.passwordConfirm"/>
+    <br>
+    <button>Submit</button>
+</form>
+<br>
+<br>
+
+
+<h3>Login</h3>
+<form asp-controller="User" asp-action="LoginUser" method="post">
+    <span asp-validation-for="login.email"></span>
+    <label>Email Address</label>
+    <input asp-for="login.email"/>
+    <br>
+    <span asp-validation-for="login.password"></span>
+    <label>Password</label>
+    <input asp-for="login.password"/>
+    <br>  
+    <button>Submit</button>
+</form>

@@ -1,0 +1,29 @@
+@{
+    ViewData["Title"] = "Lost in the Woods";
+}
+@model LostInWoods.Models.Trail
+<h1>Lost in the Woods</h1>
+<p>List of local hiking trails</p>
+
+<table>
+    <thead>
+        <tr>
+            <td>Trail Name</td>
+            <td>Trail Length</td>
+            <td>Elevation Change</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var Trail in @ViewBag.Trail)
+        {
+        <tr>
+            <td><a href="show/@Trail.Id">@Trail.Name</a></td>
+            <td>@Trail.Length</td> 
+            <td>@Trail.Elevation</td>
+        </tr>
+        }
+    </tbody>
+</table>
+<br>
+<br>
+<a class="btn btn-primary" href="createTrail">Add a New Trail</a>

@@ -6,14 +6,13 @@ namespace RESTauranter.Models
 {
     public abstract class BaseEntity{}
 
-    // public sealed class GreaterThanDateTimeAttribute : ValidationAttribute
-    // {
-    //     public override bool IsValid(object visitDate)
-    //     {
-    //         return visitDate < DateTime.Today
-            
-    //     }
-    // }
+    public sealed class GreaterThanDateTimeAttribute : ValidationAttribute
+    {
+        public override bool IsValid(object visitDate)
+        {
+            return visitDate != null && (DateTime)visitDate < DateTime.Today;
+        }
+    }
     public class Review : BaseEntity
     {
         [Required]
@@ -36,7 +35,7 @@ namespace RESTauranter.Models
         public int Stars {get; set;}
 
         [Required]
-        //[GreaterThanDateTime(ErrorMessage = "The date can not be in the future.")]
+        [GreaterThanDateTime(ErrorMessage = "The date can not be in the future.")]
         [DataType(DataType.Date)]
         public DateTime VisitDate {get; set;}
 

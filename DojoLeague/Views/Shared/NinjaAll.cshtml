@@ -1,0 +1,63 @@
+@{
+    ViewData["Title"] = "Dojo League - Ninjas";
+}
+@model DojoLeague.Models.Ninja
+
+<div class="row">
+    <div class="col-md-6">
+        <h1>All Known Ninjas</h1>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <td>Ninja Name</td>
+                    <td>Assigned Dojo</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var Ninja in @ViewBag.Ninjas)
+                {
+                <tr>
+                    <td><a href="show/@Ninja.Id">@Ninja.Name</a></td>
+                    <td>@Ninja.Dojos_Id</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+    <div class="col-md-6">
+        <h1>Register a Ninja</h1>
+        
+        <form asp-controller="Ninja" asp-action="AddNinja" method="post">
+            <div class="form-group">
+            <label>Ninja Name</label>
+            <input asp-for="Name" class="form-control">
+            </div>
+            <div class="form-group">
+            <label>Skill Level</label>
+            <input asp-for="Level" class="form-control">
+            </div>
+            <div class="form-group">
+            <label>Description</label>
+            <input asp-for="Description" class="form-control">
+            </div>
+            <div class="form-group">
+            <label>Assigned Dojo</label>
+            <select class="form-control">
+                <option>Rogue</option>
+                @foreach(var Dojo in @ViewBag.Dojos)
+                {
+                    <option value="@Dojo.Id">@Dojo.Name</option>
+                }
+            </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+

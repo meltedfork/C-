@@ -1,0 +1,28 @@
+@{
+    ViewData["Title"] = "Read the Reviews";
+}
+@model RESTauranter.Models.Review
+
+        <h1>Reviews</h1>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <td>Restaurant Name</td>
+                    <td>Stars</td>
+                    <td>Review</td>
+                    <td>Reviewed By</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var review in ViewBag.reviews)
+                {
+                    <tr>
+                        <td>@review.PlaceName</td>
+                        <td>@review.Stars</td>
+                        <td>@review.ReviewInfo</td>
+                        <td>@review.UserName ~ @review.VisitDate.ToString("MM.dd.yyyy")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+   

@@ -1,0 +1,57 @@
+@{
+    ViewData["Title"] = "Wedding Planner - Weddings";
+}
+
+<h1>Welcome to the Wedding Planner</h1>
+<button><a href="logout">Logout</a></button>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <td>Wedding</td>
+            <td>Date</td>
+            <td>Guests</td>
+            <td>Action</td>
+        </tr>
+    </thead>
+@{    
+    <tbody>
+       @foreach(var wedding in ViewBag.Weddings)
+        {
+        <tr>
+            <td><a href="/showWedding/@wedding.WeddingId">@wedding.WedOneName & @wedding.WedTwoName</a></td>
+            <td>@wedding.WeddingDate.ToString("D")</td>
+            <td>@wedding.Guests.Count</td>
+           
+            @if(wedding.UserId == ViewBag.UserId)
+            {
+                <td><a href="delete/@wedding.WeddingId">Delete</a></td>
+            }
+            else
+            {
+                bool openDate = false;
+                    @foreach(var guest in wedding.Guests)
+                    {
+                        @if(guest.UserId == ViewBag.UserId)
+                        {
+                             openDate = true;
+                        } 
+                    }
+                
+                if(openDate) 
+                {
+                      <td><a href="unrsvp/@wedding.WeddingId">Un-RSVP</a></td> 
+                }   
+                else
+                {
+                    <td><a href="rsvp/@wedding.WeddingId">RSVP</a></td>  
+                }
+            }
+            
+        </tr>
+        }            
+    </tbody>
+}    
+</table>        
+
+<button><a href="newWedding">Add a New Wedding Event</a></button>

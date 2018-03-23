@@ -1,0 +1,52 @@
+@{
+    ViewData["Title"] = "Wedding Planner";
+}
+@model WeddingPlanner.Models.UserView
+<div class="col-md-6">
+<h3>Enter Your Information to Register</h3>
+<form asp-controller="Home" asp-action="Register" method="post">
+    <div class="form-group"> 
+        <label>First Name</label>
+        <input asp-for="register.UserFirstName"/>
+        <span asp-validation-for="register.UserFirstName"></span>
+    </div>
+    <div class="form-group"> 
+        <label>Last Name</label>
+        <input asp-for="register.UserLastName"/>
+        <span asp-validation-for="register.UserLastName"></span>
+    </div>
+    <div class="form-group"> 
+        <label>Email Address</label>
+        <input asp-for="register.Email"/>
+        <span asp-validation-for="register.Email"></span>
+    </div>
+    <div class="form-group"> 
+        <label>Password</label>
+        <input asp-for="register.Password"/>
+        <span asp-validation-for="register.Password"></span>
+    </div>
+    <div class="form-group"> 
+        <label>Confirm Password</label>
+        <input asp-for="register.PasswordConfirm"/>
+        <span asp-validation-for="register.PasswordConfirm"></span>
+    </div>
+    <button>Register</button>
+</form>
+</div>
+
+<div class="col-md-6">
+<h3>Login</h3>
+<form asp-controller="Home" asp-action="LoginUser" method="post">
+    <div class="form-group"> 
+        <label>Email Address</label>
+        <input asp-for="login.Email"/>
+        <span asp-validation-for="login.Email"></span>
+    </div>
+    <div class="form-group"> 
+        <label>Password</label>
+        <input asp-for="login.Password"/>
+        <span asp-validation-for="login.Password"></span>
+    </div> 
+    <button>Login</button>
+</form>
+</div>

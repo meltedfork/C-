@@ -49,8 +49,8 @@ namespace WeddingPlanner.Controllers
                 }
                 else
                 {
-                    PasswordHasher<RegisterUser> Hasher = new PasswordHasher<RegisterUser>();
-                    string hashed = Hasher.HashPassword(model.register, model.register.Password);
+                    PasswordHasher<UserView> Hasher = new PasswordHasher<UserView>();
+                    string hashed = Hasher.HashPassword(model, model.register.Password);
                     
                     User newUser = new User
                     {
